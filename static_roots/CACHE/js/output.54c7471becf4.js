@@ -1,0 +1,2 @@
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','AW-754640207');;{"@context":"https://schema.org/","@type":"WebSite","name":"6itrade","url":"https://www.6itrade.com/","potentialAction":{"@type":"SearchAction","target":"https://clients.6itrade.com/en/register{search_term_string}","query-input":"required name=search_term_string"}};

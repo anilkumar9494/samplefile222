@@ -1,0 +1,286 @@
+{% load i18n %}
+{% load static %}
+{% load custom_tag %}
+
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+        content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Hanmenghui</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e17ceb6b9c.js" crossorigin="anonymous"></script>
+    <style>
+        .bg-dark {
+            background-color: #040404 !important;
+        }
+
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .nav-mail-icon {
+            height: 2vh;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgb(255 255 255);
+        }
+
+        .active {
+            background-color: #ED0010;
+        }
+
+        .fas {
+            color: #ED0010;
+        }
+
+        .txt-red {
+            color: #ED0010;
+        }
+
+        .bg-primary {
+            background-color: #122b88 !important;
+            border-color: #122b88 !important;
+            color: white;
+        }
+
+        .txt-primary {
+            color: #122b88;
+        }
+
+        .navbar-nav>li {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            background-color: #040404 !important
+        }
+
+        .dropdown-item:focus,
+        .dropdown-item:hover {
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #ED0010;
+        }
+
+        .bg-lights {
+            background-color: #545b62;
+            color: white;
+        }
+
+        element.style {
+            background-color: #112a8c;
+        }
+
+        .bx-shadow {
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+        }
+
+        .section-search {
+            background-color: #545b62;
+            padding: 25px;
+            color: white;
+            display: block;
+        }
+
+        .btn-primaryk {
+            color: #fff;
+            background-color: #ed3833;
+            border-color: #ed3833;
+        }
+
+        .border-right {
+            border-right: 1px solid white
+        }
+        .translated-ltr{margin-top:-40px;}
+        .translated-ltr{margin-top:-40px;}
+        .goog-te-banner-frame {display: none;margin-top:-20px;}
+
+        .goog-logo-link {
+        display:none !important;
+        } 
+        .goog-te-gadget{
+            color:transparent !important;
+            margin-bottom: -21px;
+        }
+        .cusotm-select select{
+            padding: 10px;
+            border-radius: .25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar  navbar-expand-sm bg-dark navbar-dark fixed-top">
+            {% block logo %}
+            <!-- Brand -->
+            <a class="navbar-brand text-center">
+                <img src="{%static 'image/6i-Market.jpg'%}" class="d-md-block d-sm-block" width="20%">
+            </a>
+            <!-- Links -->
+            {%endblock%}
+            <ul class="navbar-nav ml-auto" >
+                <li class="nav-item">
+                    <a class="nav-link active f1 text-uppercase" href="{%url 'crm_home'%}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle f1 text-uppercase" href="#" id="navbardrop"
+                        data-toggle="dropdown">
+                        Clients
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'client'%}">Client details</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle f1 text-uppercase" href="#" id="navbardrop"
+                        data-toggle="dropdown">
+                        Finance
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'deposithistory'%}">Deposit History</a>
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'withdrawhistory'%}">Withdraw History</a>
+                        <!-- <a class="dropdown-item f1 text-uppercase" href="{%url 'transactionhistory'%}">Transaction
+                            History</a> -->
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle f1 text-uppercase" href="#" id="navbardrop"
+                        data-toggle="dropdown">
+                        Sales
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'sales_assignment'%}">Sales
+                            Assignment</a>
+                    </div>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle f1 text-uppercase" href="#" id="navbardrop" data-toggle="dropdown">
+                        Pending
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'pendingclients'%}">Pending Client</a>
+
+
+                    </div>
+
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link f1 text-uppercase" href="{%url 'agents'%}">Agents</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle f1 text-uppercase" href="#" id="navbardrop"
+                        data-toggle="dropdown">
+                        Settings
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'addactype'%}">Add Account TYPE</a>
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'addcurrency'%}">Add CURRENCY</a>
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'adddepartment'%}">Add department</a>
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'addoffice'%}">Add office</a>
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'addbrand'%}">Add brand</a>
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'addleadsregions'%}">Add leads
+                            regions</a>
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'access_level'%}">Add access level</a>
+                        <a class="dropdown-item f1 text-uppercase" href="{%url 'leads_access_level'%}">leads access
+                            level</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-2">
+                    <a class="nav-link f1 text-white" href="#" data-toggle="collapse"><img
+                            src="{%static 'image/icon/mailicon.png'%}"
+                            class="nav-mail-icon" />&nbsp;&nbsp;info@6imarket.com
+                    </a>
+                </li>
+                <!-- <li>
+                    <div id="trans_elem_id" class="cusotm-select"></div>
+                </li> -->
+                <li>
+                    <select name="" id="lang_select">
+                        <option value="en">English</option>
+                        <option value="zh">Chinese</option>
+                    </select>
+                </li>
+                <li class="nav-item bg-primary logoutbtn">
+                    <a class="nav-link" href="{%url 'logout'%}">
+                        <img src="{%static 'image/icon/logout.png'%}" class="d-md-block d-sm-block"
+                            style="height: 4vh;" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-fluid mt-5 pt-5 pb-5 h-100">
+
+            {%block content%} {%endblock%}
+        </div>
+    </div>
+    <!-- <div class="footer py-2">
+        <p class=" small mb-0">Copright@2020 Hanmenghui, All rights reserved</p>
+    </div> -->
+    {% block js%}
+    {% endblock %}
+    {% block demoaccountjs %}
+    {% endblock %}
+    {% block liveacjs %}
+    {% endblock %}
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({includedLanguages : 'en,zh-CN,zh-TW'}, 'trans_elem_id');
+        }
+    </script>
+
+<script>
+    console.log("----------", window.location.origin)  /* ipaddress */
+    console.log("----------", window.location.pathname)  /* variable path */
+    console.log("----------", window.location.href)   /* absolute url  */
+
+    $("#lang_select").change(function(){
+        /* for china 11 */
+        var url = window.location.origin;
+        var link_total = window.location.href;
+        var name_path = window.location.pathname
+        var string_to_add = '/zh'
+        if(window.location.href.indexOf("zh") > -1) 
+            {document.location = link_total.replace('/zh','')}
+        else
+            {if (window.location.href.indexOf("/en") > -1){
+                document.location = url + name_path.replace("/en", "/zh")}
+            else{
+                document.location = url + string_to_add + name_path}
+            }
+});
+</script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

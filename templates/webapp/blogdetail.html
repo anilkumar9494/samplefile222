@@ -1,0 +1,65 @@
+{% extends 'webapp/base.html' %} {% load static %} {% block home %}
+
+<section id="blog">
+  <div class="overlay_why p-8">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div>
+                    <img src="{{blog.img.url}}" alt="image">
+                </div>
+                <h1 class="pb-20 pt-20">{{blog.title}}</h1>
+                <div class="text-white">
+                    <p>{{blog.short_desc}}</p>
+                  
+                </div>
+            </div>
+
+            <div class="col-md-3">
+              <section class="moreblogs">
+                <div class="overlaytxt">
+                <h4>Read Others..</h4>
+                </div>
+                <section class="content">
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <div class="blogitems">
+                        <img src="" alt="image">
+                        <div class="overlay_caption">20 Important Questions for Salon Treatment?</div>
+                    </div>
+                    <a href="/blogdetail" class="morebtn">Read More ..</a>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="blogitems">
+                      <img src="https://cdn.dummyjson.com/product-images/2/2.jpg" alt="image">
+                      <div class="overlay_caption">20 Important Questions for Salon Treatment?</div>
+                  </div>
+                  <a href="/blogdetail" class="morebtn">Read More ..</a>
+              </div>
+              <div class="col-md-12 text-center">
+                <div class="blogitems">
+                    <img src="https://cdn.dummyjson.com/product-images/2/2.jpg" alt="image">
+                    <div class="overlay_caption">20 Important Questions for Salon Treatment?</div>
+                </div>
+                <a href="/blogdetail" class="morebtn">Read More ..</a>
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="blogitems">
+                  <img src="https://cdn.dummyjson.com/product-images/2/2.jpg" alt="image">
+                  <div class="overlay_caption">20 Important Questions for Salon Treatment?</div>
+              </div>
+              <a href="/blogdetail" class="morebtn">Read More ..</a>
+          </div>
+                </div>
+              </section>
+              </section>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%endblock %}

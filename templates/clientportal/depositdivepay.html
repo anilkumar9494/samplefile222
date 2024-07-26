@@ -1,0 +1,74 @@
+{% extends 'clientportal/deposit.html' %}
+{%load static%}
+{% load custom_tag %}
+{%block deposit_divepay%}
+<div class="container">
+    <div class="col-lg-12">
+        <h3 class="text-center"><b>Deposit Divepay</b></h3>
+    </div>
+
+        <form id="pay_with_divepay" method="post" action="https://www.divepay.com/demo/process">
+          {% csrf_token %}
+            <div class="form-group col-lg-12 col-md-12 dp">
+                <label for="formGroupExampleInput2">Amount</label>
+                <input type="number" name="price" class="form-control" id="formGroupExampleInput2" placeholder="Enter Amount" required>
+              </div>
+              <!-- <div class="form-group col-lg-12 col-md-12 dp">
+                <label>Divepay Email</label>
+                <input type="email" id="divepay_email" name="divepay_email" class="form-control" placeholder="Enter Divepay Email" required>
+              </div> -->
+              <input type="hidden" name="member" id="member" value="infodivsolution@gmail.com" />
+              <input type="hidden" name="item_id" id="item_id" value="{{ request.user.id|make_hash_item:request.user.username }}" />
+              <input type="hidden" name="success_url" value="{{request.scheme}}://{{ request.get_host }}{% url 'CheckUserPaymentDivePayAPIView' %}" />
+              <input type="hidden" name="cancel_url" value="{{request.scheme}}://{{ request.get_host }}{% url 'CheckUserPaymentDivePayAPIView' %}" />
+              <input type="hidden" name="action" value="payment" />
+            <div class="form-group col-lg-12 col-md-12 dp">
+              <label for="formGroupExampleInput">Currency</label>
+              <select name="currency" class="form-control" required>
+                <option value="">Please Select<option>
+                      {% for c in ca %}
+                <option value="{{c.name}}">{{ c.name }}</option>
+                      {%endfor%}
+            </select>
+
+        </div><br>
+
+        <p class="dp" style="text-align: justify;">*Please be aware that Charges and Exchange Fees for each Transaction may vary depending on Issuer, Remitter or Financial Institution, which are out of the Company's control.</p>
+        <br><br>
+        <div class="form-group col-lg12 col-md-12 dp">
+          <input type="submit" value="Deposit Funds" class="btn btn-primary" style="padding-left: 15rem; padding-right: 15rem;">
+        </div>
+        <!-- <a href="javascript:void(0);" ><img src="https://www.divepay.com/demo/assets/img/logo.png" onclick="pay_with_divepay_func();" style="border:none" />Deposit Funds</a> -->
+    </form>
+            </div>
+
+
+{%endblock%}
+{% block myaccountjs %}
+<script type="text/javascript">
+  var a = false;
+  $('#pay_with_divepay').on('submit', function(e){
+    var url = "https://www.divepay.com/demo/process"
+    e.preventDefault();
+    var form_data = $(this).serialize();
+    if (a == false){
+      $.ajax({
+        url: `{% url 'StoreDetailsAPIView' %}`,
+        type: 'POST',
+        cache: false,
+        async: true,
+        data: form_data,
+        success: function(r){
+          if (r.status==0){
+            var a = true;
+            if (a == true){
+              document.getElementById('pay_with_divepay').submit();
+              console.log('hello');
+            }
+          }
+        }
+      });
+    }
+  });
+</script>
+{% endblock myaccountjs %}

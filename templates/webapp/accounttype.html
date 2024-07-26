@@ -1,0 +1,261 @@
+{% extends 'webapp/base.html' %} {% load static %} {% block home %}
+
+<style>
+    #accounttype_tbl{
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      color: #fff;
+      font-size: smaller;
+    }
+    #accounttype_tbl tr:first-child {
+    background-color: rgba(151, 1, 28, 1);
+
+}
+#accounttype_tbl tr:first-child th{
+    text-align: center;
+}
+#accounttype_tbl tr:first-child th img{
+    height: 80px;
+    width: 100px;
+}
+    #accounttype_tbl th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .txt-yellow{
+        color: rgba(237, 176, 66, 1);
+    }
+    .bg-yellow{
+        background-color: rgba(237, 176, 66, 1);
+        color:#000;
+    }
+</style>
+
+
+
+
+<section id="blog">
+  <div class="overlay_why p-8">
+    <div class="row">
+      <div class="container">
+        <div class="col-lg-12 mb-20 text-center">
+          <h1 class="pb-2">Account Types</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <table id="accounttype_tbl" style="width: 100%;">
+                    <tr>
+                        <th colspan="2">
+                            <div style="display:flex;justify-content: center;">
+                                <img src="/static/img/6i-logo.png"><span style="color:rgba(237, 176, 66, 1);color: rgba(237, 176, 66, 1);
+                                font-size: 32px;
+                                align-self: center;">Spread</span>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Instruments:</td>
+                        <td><strong>FOREX, METALS, CRYPTOS, INDICES & ENERGIES</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Spreads from</td>
+                        <td style="display: flex;justify-content: space-around;">
+                            <div>
+                            EURUSD <span class="text-yellow">1.3</span>
+                            <br/>
+                            GBPUSD <span class="text-yellow">1.4</span>
+                            </div>
+                            <div>
+                            USDJPY <span class="text-yellow">1.3</span>
+                            <br/>
+                            XAUUSD <span class="text-yellow">25</span>
+                            </div>
+                        </td>
+                    </tr>
+                   <tr>
+                    <td>Commission <br/>
+                        Deposit Currency Equivalent</td>
+                    <td class="text-right">
+                        No
+                    </td>
+                   </tr>
+
+                   <tr>
+                    <td>Spreads from:</td>
+                    <td class="text-right">
+                        up to 1:500
+                    </td>
+                   </tr>
+
+                   <tr>
+                    <td>
+                        Platform:
+                    </td>
+                    <td class="text-right">
+                        MT4 Desktop, MT4 Mobile
+                    </td>
+                   </tr>
+                   <tr>
+                    <td>Margin Call Percentage:</td>
+                    <td class="text-right">100%</td>
+                   </tr>
+
+                   <tr>
+                    <td>Stop Out Percentage (Automatic Closure):</td>
+                    <td class="text-right">50%</td>
+                   </tr>
+
+                   <tr>
+                    <td>Deposit Currency Options:</td>
+                    <td class="text-right">USD, EUR</td>
+                   </tr>
+                   <tr>
+                    <td>Min. Deposit:</td>
+                    <td class="text-right">No</td>
+                   </tr>
+
+                   <tr>
+                    <td>Execution Type:</td>
+                    <td></td>
+                   </tr>
+
+                   <tr>
+                    <td>Dealing Desk Intervention:</td>
+                    <td class="text-right">USD, EUR</td>
+                   </tr>
+
+                   <tr>
+                    <td>Server Time:</td>
+                    <td class="text-right">
+                        Summer GMT <span class="text-yellow">+3 April-October</span> <br/>
+                        Winter GMT <span class="text-yellow">+2 November-March</span>
+                    </td>
+
+                   </tr>
+
+                   <tr>
+                    <td colspan="2" class="text-center">
+                        <button class="btn btn-default bg-yellow">OPEN REAL ACCOUNT</button>
+                    </td>
+                   </tr>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <table id="accounttype_tbl" style="width: 100%;">
+                    <tr>
+                        <th colspan="2">
+                            <div style="display:flex;justify-content: center;">
+                                <img src="/static/img/6i-logo.png"><span style="color:rgba(237, 176, 66, 1);color: rgba(237, 176, 66, 1);
+                                font-size: 32px;
+                                align-self: center;">Commission</span>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Instruments:</td>
+                        <td><strong>FOREX, METALS, CRYPTOS, INDICES & ENERGIES</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Spreads from</td>
+                        <td style="display: flex;justify-content: space-around;">
+                            <div>
+                            EURUSD <span class="txt-yellow">0.5</span>
+                            <br/>
+                            GBPUSD <span class="txt-yellow">0.6</span>
+                            </div>
+                            <div>
+                            USDJPY <span class="txt-yellow">0.5</span>
+                            <br/>
+                            XAUUSD <span class="txt-yellow">17</span>
+                            </div>
+                        </td>
+                    </tr>
+                   <tr>
+                    <td>Commission
+                         <br/>
+                        Deposit Currency Equivalent</td>
+
+                    <td style="display: flex;justify-content: space-around;">
+                            <div>
+                                Forex & Metals  <span class="txt-yellow">8 USD</span> <br>
+                                Energies <span class="txt-yellow">5 USD</span>
+                            </div>
+                            <div>
+                                Indices <span class="txt-yellow">2 USD</span> <br>
+                                Cryptos <span class="txt-yellow">0 USD</span>
+                            </div>
+                        </td>
+                   </tr>
+
+                   <tr>
+                    <td>Spreads from:</td>
+                    <td class="text-right">
+                        up to 1:500
+                    </td>
+                   </tr>
+
+                   <tr>
+                    <td>
+                        Platform:
+                    </td>
+                    <td class="text-right">
+                        MT4 Desktop, MT4 Mobile
+                    </td>
+                   </tr>
+                   <tr>
+                    <td>Margin Call Percentage:</td>
+                    <td class="text-right">100%</td>
+                   </tr>
+
+                   <tr>
+                    <td>Stop Out Percentage (Automatic Closure):</td>
+                    <td class="text-right">50%</td>
+                   </tr>
+
+                   <tr>
+                    <td>Deposit Currency Options:</td>
+                    <td class="text-right">USD, EUR</td>
+                   </tr>
+                   <tr>
+                    <td>Min. Deposit:</td>
+                    <td class="text-right">No</td>
+                   </tr>
+
+                   <tr>
+                    <td>Execution Type:</td>
+                    <td></td>
+                   </tr>
+
+                   <tr>
+                    <td>Dealing Desk Intervention:</td>
+                    <td class="text-right">USD, EUR</td>
+                   </tr>
+
+                   <tr>
+                    <td>Server Time:</td>
+                    <td class="text-right">
+                        Summer GMT <span class="txt-yellow">+3 April-October</span> <br/>
+                        Winter GMT  <span class="txt-yellow">+2 November-March</span>
+                    </td>
+
+                   </tr>
+
+                   <tr>
+                    <td colspan="2" class="text-center">
+                        <button class="btn btn-default bg-yellow" >OPEN REAL ACCOUNT</button>
+                    </td>
+                   </tr>
+                </table>
+            </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</section>
+
+{%endblock %}

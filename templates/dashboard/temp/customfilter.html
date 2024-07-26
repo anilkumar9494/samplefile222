@@ -1,0 +1,156 @@
+{% load i18n %}
+<style>
+    .navbar-brand{
+        margin-top: -46px;
+    }
+</style>
+<!-- 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" /> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+
+
+<div class="row">
+    <div class="col-lg-6 col-md-6">
+        <select class="form-control btn btn-default" style="border:1px solid #ddd;height: 35px;" name="added_on" id="added_on" onchange="filter_function(this);">
+            <option class="form-control" selected disabled> {% trans "Select Custom Filter" %}</option>
+            {% for i in custom_date_choice %}
+                <option value="{{ i.0 }}" {% if request.GET.added_on|add:"0" == i.0 %} selected {% endif %}>{{ i.1 }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-4">
+        <div class="form-group">
+            <label>Date From:</label>
+            <input type="text" id="datepicker" class="form-control">
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label>Date To:</label>
+            <input type="text" id="datepicker1" class="form-control">
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <p>Date From: <input type="text" id="datepicker" ></p>
+<p>Date To: <input type="text" id="datepicker1"></p> -->
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+<script>
+    var jqOld = jQuery.noConflict();
+    jqOld(function() {
+        jqOld("#datepicker" ).datepicker();
+		jqOld("#datepicker1" ).datepicker();
+    })
+</script>
+
+<link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+function formatdate(userDate){
+  var omar= new Date(userDate);
+  y  = omar.getFullYear().toString();
+  m = omar.getMonth().toString();
+  d = omar.getDate().toString();
+  omar=y+m+d;
+  return omar;
+}
+	function date_change() {
+		//var selectedval = $(this).children("option:selected").val();
+		
+		//customdatepicker(selectedval);
+		var startDate=$("#datepicker").val();
+		var end=$("#datepicker1").val();
+		console.log("Moment date--", end);
+		var s=startDate.split('/')
+		var s1=end.split('/')
+		start_Date=s[2]+'-'+s[0]+'-'+s[1]
+		endDate=s1[2]+'-'+s1[0]+'-'+s1[1]
+		
+		if (end!=''){
+			
+			console.log("Moment date--", end);
+			window.location.href = window.location.origin + window.location.pathname + '?added_on=7&startDate=' + start_Date + '&endDate=' + endDate
+		
+		}
+	}
+setInterval(date_change, 1000); 
+
+/*    var startDate = '';
+    var endDate = '';
+    // console.log("Moment date--", moment()._d);
+    if ($('#added_on').children("option:selected").val() == '7' || $('#added_on').children("option:selected").val() == 7) {
+        customdatepicker(7)
+    }
+
+    $(document).ready(function() {
+        $("#added_on").change(function() {
+            var selectedval = $(this).children("option:selected").val();
+			
+            customdatepicker(selectedval);
+        });
+    });
+
+    function customdatepicker(selectedval) {
+        if (selectedval == '7' || selectedval == 7) {
+            var start = moment().subtract(29, 'days'); // moment.js ref-->https://momentjs.com
+            var end = moment();
+
+            function cb(start, end) {
+                startDate = start.format('YYYY-MM-DD')
+                endDate = end.format('YYYY-MM-DD')
+                $('#added_on').on('apply.daterangepicker', function(ev, picker) {
+                    if ('{{id}}'){
+                    window.location.href = window.location.origin + window.location.pathname + '?u_id={{id}}&added_on=7&startDate=' + startDate + '&endDate=' + endDate
+                    }else{
+                        window.location.href = window.location.origin + window.location.pathname + '?added_on=7&startDate=' + startDate + '&endDate=' + endDate
+                    }
+                });
+            }
+            $('#added_on').daterangepicker({
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    language: 'en'
+                }
+            }, cb);
+            cb(start, end);
+        }
+    }*/
+</script>
+
+
+<script>
+    function filter_function(input_attr) {
+        var custom_var_val = $(`#${input_attr.getAttribute('name')}`).val();
+        if (parseInt(custom_var_val) != 7) {
+            var url = new URL(window.location.href);
+            var query_string = url.search;
+            var search_params = new URLSearchParams(query_string);
+            // if (search_params.get('page')) {
+            //   search_params.set(`page`, `1`);
+            // }
+            search_params.set(`${input_attr.getAttribute('name')}`, `${custom_var_val}`);
+            url.search = search_params.toString();
+            var new_url = url.toString();
+            window.location.href = new_url;
+        }
+    }
+</script>
+

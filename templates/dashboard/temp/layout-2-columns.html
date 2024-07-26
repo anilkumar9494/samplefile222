@@ -1,0 +1,236 @@
+{% extends 'dashboard/temp/dash-index.html' %}
+{% load i18n %}
+
+{% load static %}
+{% block dashboard %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+<div class="container-fluid">
+  <div class="row">
+    <div class="card card-hd shadow">
+        <a><i class="fa fa-home" style="font-size:25px"></i>&nbsp;{% trans "Dashboard" %}</a>
+    </div>
+</div>
+
+<div class="row dash-cnt">
+  <div class="col-lg-3 col-md-3">
+   <div class="card">
+   <div class="card-body bg-light shadow-lg">
+    <span class="span-card"><b>{{ total_clients }}</b></span>
+     <span class="pull-right"><i class="fa fa-user" aria-hidden="true" style="font-size:25px"></i></span>
+     <h3 class="h3-card"><b>{% trans "Clients" %} </b></h3>
+   </div>
+   </div>
+ </div>
+
+ <div class="col-lg-3 col-md-3 ">
+   <div class="card ">
+   <div class="card-body bg-blue shadow-lg">
+    <span class="span-card"><b>{{ today_register }}</b></span>
+     <span class="pull-right"><i class="fa fa-line-chart dash-icon" style="font-size:25px"></i></span>
+     <h3 class="h3-card"><b>{% trans "Today Registrations" %} </b></h3>
+   </div>
+   </div>
+ </div>
+  <div class="col-lg-3 col-md-3 ">
+   <div class="card ">
+   <div class="card-body bg-success shadow-lg">
+       <span class="span-card"><b>{{ this_month_deposit.amount__sum }}</b></span>
+     <span class="pull-right"><i class="fa fa-arrow-up" style="font-size:25px"></i></span>
+     <h3 class="h3-card"><b> {% trans "This Month Deposits" %} </b></h3>
+   </div>
+   </div>
+ </div>
+ <div class="col-lg-3 col-md-3">
+   <div class="card">
+   <div class="card-body bg-danger shadow-lg">
+       <span class="span-card"><b>{{ this_month_withdraw.amount__sum }}</b></span>
+     <span class="pull-right"><i class="fa fa-arrow-down" style="font-size:25px"></i></span>
+     <h3 class="h3-card"><b> {% trans " This Month Withdrawals" %} </b></h3>
+   </div>
+   </div>
+ </div>
+ </div>
+
+<div class="row dash-cnt" >
+    <iframe src="https://hnxinluan.cn/api/v1/auth/amount_dashboard?d1=30&d2=30&d3=30" height="1550" style="margin:0 auto;width:95%;box-shadow:20px 20px 50px grey;"></iframe>
+</div>
+
+
+
+<!--<div class="row dash-cnt">-->
+<!--    <div class="col-sm-4">-->
+<!--        <div id="chart_div" style="width:100%; height: 500px;"></div>-->
+<!---->
+<!--    </div>-->
+<!---->
+<!--    <div class="col-sm-4">-->
+<!--    <div id="chart_divs" style="width:100%; height: 500px;"></div>-->
+<!---->
+<!--    </div>-->
+<!--    -->
+<!--    <div class="col-sm-4">-->
+<!--    <div id="chart_divss" style="width:100%; height: 500px;"></div>-->
+<!---->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+<!--   <script type="text/javascript">-->
+<!--     google.charts.load("current", {packages:["corechart"]});-->
+<!--     google.charts.setOnLoadCallback(drawChart);-->
+<!--     function drawChart() {-->
+<!--       var data = google.visualization.arrayToDataTable([-->
+<!--         ['Dinosaur', 'Length'],-->
+<!--         ['Acrocanthosaurus (top-spined lizard)', 12.2],-->
+<!--         ['Albertosaurus (Alberta lizard)', 9.1],-->
+<!--         ['Allosaurus (other lizard)', 12.2],-->
+<!--         ['Apatosaurus (deceptive lizard)', 22.9],-->
+<!--         ['Archaeopteryx (ancient wing)', 0.9],-->
+<!--         ['Argentinosaurus (Argentina lizard)', 36.6],-->
+<!--         ['Baryonyx (heavy claws)', 9.1],-->
+<!--         ['Brachiosaurus (arm lizard)', 30.5],-->
+<!--         ['Ceratosaurus (horned lizard)', 6.1],-->
+<!--         ['Coelophysis (hollow form)', 2.7],-->
+<!--         ['Compsognathus (elegant jaw)', 0.9],-->
+<!--         ['Deinonychus (terrible claw)', 2.7],-->
+<!--         ['Diplodocus (double beam)', 27.1],-->
+<!--         ['Dromicelomimus (emu mimic)', 3.4],-->
+<!--         ['Gallimimus (fowl mimic)', 5.5],-->
+<!--         ['Mamenchisaurus (Mamenchi lizard)', 21.0],-->
+<!--         ['Megalosaurus (big lizard)', 7.9],-->
+<!--         ['Microvenator (small hunter)', 1.2],-->
+<!--         ['Ornithomimus (bird mimic)', 4.6],-->
+<!--         ['Oviraptor (egg robber)', 1.5],-->
+<!--         ['Plateosaurus (flat lizard)', 7.9],-->
+<!--         ['Sauronithoides (narrow-clawed lizard)', 2.0],-->
+<!--         ['Seismosaurus (tremor lizard)', 45.7],-->
+<!--         ['Spinosaurus (spiny lizard)', 12.2],-->
+<!--         ['Supersaurus (super lizard)', 30.5],-->
+<!--         ['Tyrannosaurus (tyrant lizard)', 15.2],-->
+<!--         ['Ultrasaurus (ultra lizard)', 30.5],-->
+<!--         ['Velociraptor (swift robber)', 1.8]]);-->
+<!---->
+<!--       var options = {-->
+<!--          title: 'This Months Registrations',-->
+<!--          legend: { position: 'none' },-->
+<!--          colors: ['#e7711c'],-->
+<!--          histogram: { lastBucketPercentile: 5 },-->
+<!--          vAxis: { scaleType: 'mirrorLog' }-->
+<!--        };-->
+<!---->
+<!--       var chart = new google.visualization.Histogram(document.getElementById('chart_divs'));-->
+<!--       chart.draw(data, options);-->
+<!--     }-->
+<!--   </script>-->
+<!--</div>-->
+<!---->
+<!---->
+<!---->
+<!--   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+<!--   <script type="text/javascript">-->
+<!--     google.charts.load("current", {packages:["corechart"]});-->
+<!--     google.charts.setOnLoadCallback(drawChart);-->
+<!--     function drawChart() {-->
+<!--       var data = google.visualization.arrayToDataTable([-->
+<!--         ['Dinosaur', 'Length'],-->
+<!--         ['Acrocanthosaurus (top-spined lizard)', 12.2],-->
+<!--         ['Albertosaurus (Alberta lizard)', 9.1],-->
+<!--         ['Allosaurus (other lizard)', 12.2],-->
+<!--         ['Apatosaurus (deceptive lizard)', 22.9],-->
+<!--         ['Archaeopteryx (ancient wing)', 0.9],-->
+<!--         ['Argentinosaurus (Argentina lizard)', 36.6],-->
+<!--         ['Baryonyx (heavy claws)', 9.1],-->
+<!--         ['Brachiosaurus (arm lizard)', 30.5],-->
+<!--         ['Ceratosaurus (horned lizard)', 6.1],-->
+<!--         ['Coelophysis (hollow form)', 2.7],-->
+<!--         ['Compsognathus (elegant jaw)', 0.9],-->
+<!--         ['Deinonychus (terrible claw)', 2.7],-->
+<!--         ['Diplodocus (double beam)', 27.1],-->
+<!--         ['Dromicelomimus (emu mimic)', 3.4],-->
+<!--         ['Gallimimus (fowl mimic)', 5.5],-->
+<!--         ['Mamenchisaurus (Mamenchi lizard)', 21.0],-->
+<!--         ['Megalosaurus (big lizard)', 7.9],-->
+<!--         ['Microvenator (small hunter)', 1.2],-->
+<!--         ['Ornithomimus (bird mimic)', 4.6],-->
+<!--         ['Oviraptor (egg robber)', 1.5],-->
+<!--         ['Plateosaurus (flat lizard)', 7.9],-->
+<!--         ['Sauronithoides (narrow-clawed lizard)', 2.0],-->
+<!--         ['Seismosaurus (tremor lizard)', 45.7],-->
+<!--         ['Spinosaurus (spiny lizard)', 12.2],-->
+<!--         ['Supersaurus (super lizard)', 30.5],-->
+<!--         ['Tyrannosaurus (tyrant lizard)', 15.2],-->
+<!--         ['Ultrasaurus (ultra lizard)', 30.5],-->
+<!--         ['Velociraptor (swift robber)', 1.8]]);-->
+<!---->
+<!--       var options = {-->
+<!--          title: 'This Months Deposit',-->
+<!--          legend: { position: 'none' },-->
+<!--          colors: ['#e7711c'],-->
+<!--          histogram: { lastBucketPercentile: 5 },-->
+<!--          vAxis: { scaleType: 'mirrorLog' }-->
+<!--        };-->
+<!---->
+<!--       var chart = new google.visualization.Histogram(document.getElementById('chart_div'));-->
+<!--       chart.draw(data, options);-->
+<!--     }-->
+<!--   </script>-->
+<!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  google.charts.load("current", {packages:["corechart"]});-->
+<!--  google.charts.setOnLoadCallback(drawChart);-->
+<!--  function drawChart() {-->
+<!--    var data = google.visualization.arrayToDataTable([-->
+<!--      ['Dinosaur', 'Length'],-->
+<!--      ['Acrocanthosaurus (top-spined lizard)', 12.2],-->
+<!--      ['Albertosaurus (Alberta lizard)', 9.1],-->
+<!--      ['Allosaurus (other lizard)', 12.2],-->
+<!--      ['Apatosaurus (deceptive lizard)', 22.9],-->
+<!--      ['Archaeopteryx (ancient wing)', 0.9],-->
+<!--      ['Argentinosaurus (Argentina lizard)', 36.6],-->
+<!--      ['Baryonyx (heavy claws)', 9.1],-->
+<!--      ['Brachiosaurus (arm lizard)', 30.5],-->
+<!--      ['Ceratosaurus (horned lizard)', 6.1],-->
+<!--      ['Coelophysis (hollow form)', 2.7],-->
+<!--      ['Compsognathus (elegant jaw)', 0.9],-->
+<!--      ['Deinonychus (terrible claw)', 2.7],-->
+<!--      ['Diplodocus (double beam)', 27.1],-->
+<!--      ['Dromicelomimus (emu mimic)', 3.4],-->
+<!--      ['Gallimimus (fowl mimic)', 5.5],-->
+<!--      ['Mamenchisaurus (Mamenchi lizard)', 21.0],-->
+<!--      ['Megalosaurus (big lizard)', 7.9],-->
+<!--      ['Microvenator (small hunter)', 1.2],-->
+<!--      ['Ornithomimus (bird mimic)', 4.6],-->
+<!--      ['Oviraptor (egg robber)', 1.5],-->
+<!--      ['Plateosaurus (flat lizard)', 7.9],-->
+<!--      ['Sauronithoides (narrow-clawed lizard)', 2.0],-->
+<!--      ['Seismosaurus (tremor lizard)', 45.7],-->
+<!--      ['Spinosaurus (spiny lizard)', 12.2],-->
+<!--      ['Supersaurus (super lizard)', 30.5],-->
+<!--      ['Tyrannosaurus (tyrant lizard)', 15.2],-->
+<!--      ['Ultrasaurus (ultra lizard)', 30.5],-->
+<!--      ['Velociraptor (swift robber)', 1.8]]);-->
+<!---->
+<!--    var options = {-->
+<!--       title: 'This Months Withdrawl',-->
+<!--       legend: { position: 'none' },-->
+<!--       colors: ['#e7711c'],-->
+<!--       histogram: { lastBucketPercentile: 5 },-->
+<!--       vAxis: { scaleType: 'mirrorLog' }-->
+<!--     };-->
+<!---->
+<!--    var chart = new google.visualization.Histogram(document.getElementById('chart_divss'));-->
+<!--    chart.draw(data, options);-->
+<!--  }-->
+<!--</script>-->
+
+
+
+
+
+</div>
+{% endblock %}

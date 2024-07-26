@@ -1,0 +1,85 @@
+{% extends 'clientportal/client_index.html' %} {% load i18n %} {%load static%} {% block all_page %}
+
+<div class="container mt-5" style="border:1px solid #191919">
+    <div class="row py-2" style="background-color:#191919;">
+        <div class="col-lg-12 col-md-12">
+            <h5 class="text-uppercase f1 text-center text-white pt-2">Download&nbsp;&nbsp;Platform&nbsp;</h5>
+        </div>
+    </div>
+    <div class="row" style="display: flex;justify-content: center;">
+        <div class="col-lg-4 col-md-4 mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <p class="f1 text-center" style="color: #112a8c;">MT4 for Window</p>
+                </div>
+            </div>
+            <section class="text-center ml-5 mr-5" style=" padding:18px 0; text-align: center;border: 1px solid #191919;">
+
+                <a href="#">
+                    <img src="{%static 'image/icon/mt4.png'%}" class="" style="width:75%" />
+
+
+                </a>
+            </section>
+            <div class="row pt-3">
+                <div class="col-lg-12 col-md-12 text-center">
+                    <a href="https://download.mql5.com/cdn/web/17579/mt4/hanmenghui4setup.exe" href="#" class=" f1" style="color: #ED0010;">Download</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <p class="f1 text-center" style="color: #112a8c;">MT4 for Android</p>
+                </div>
+            </div>
+            <section class="text-center ml-5 mr-5" style=" padding: 20px 0; text-align: center;border: 1px solid #191919;">
+
+                <img src="{%static 'android.jpeg'%}" class="w-75">
+
+            </section>
+            <div class="row pt-3">
+                <div class="col-lg-12 col-md-12 text-center">
+                    <a href="./metatrader4.apk.1"   target="_blank" class="f1" style="color: #ED0010;" download>Download</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <p class="f1 text-center" style="color: #112a8c;">MT4 for ios</p>
+                </div>
+            </div>
+            <section class="text-center ml-5 mr-5" style=" padding: 20px 0; text-align: center;border: 1px solid #191919;">
+
+                <img src="{%static 'images/iso.png'%}" class="w-75">
+
+            </section>
+            <div class="row pt-3">
+                <div class="col-lg-12 col-md-12 text-center">
+                    <a href="https://download.mql5.com/cdn/mobile/mt4/ios?server=Hanmenghui-Demo,Hanmenghui-Real" target="_blank" class="f1" style="color: #ED0010;">Download</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="section mb-5" style="margin-top:1%">
+    <div class="d-flex justify-content-center">
+        <h4 class="text-capitalize">Deposit Option</h4>
+
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+        <div>
+            <a href="{%url 'bitcoin_payment'%}"><img src="{%static 'image/icon/BTC.png'%}" style="width:3rem" />
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;
+    
+            <a href="{%url 'usdt'%}"><img src="{%static 'image/icon/USDT.png'%}" style="width:3rem" /> </a>
+    
+        </div>
+    </div>
+</div>
+{%endblock%}

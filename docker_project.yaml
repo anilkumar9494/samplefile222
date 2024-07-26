@@ -1,0 +1,39 @@
+version: '3.2'
+
+
+services:
+    hnxinluan_mariadb:
+      #image: mariadb:10.3
+      image: mysql
+      ports:
+        - "3306:3306"
+      expose:
+        - "3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: 6ibet
+        MYSQL_USER: rroot
+        MYSQL_HOST: localhost
+        MYSQL_PASSWORD: rroot
+        MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      volumes:
+       - my-db:/var/lib/mysql
+
+
+    hnxinluan_backend:
+      build: .
+      ports:
+        - "8060:8000"
+      working_dir: /app
+      command: python3 manage.py runserver --insecure 0.0.0.0:8000
+      volumes:
+        - .:/app
+        - ..:/host/app
+      environment:
+        - "PYTHONUNBUFFERED=1"
+      expose:
+        - "8000"
+      depends_on:
+        - hnxinluan_mariadb
+volumes:
+ my-db:

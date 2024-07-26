@@ -1,0 +1,391 @@
+{% load i18n %} {%load static%} {% load custom_tag %}
+
+<!-- - var navbarShadow = true-->
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+        content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>6imarket</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .f1 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .nav-mail-icon {
+            height: 2vh;
+        }
+
+        .btn-default {
+            background-color: #ED0010;
+            border: 1px solid #ED0010;
+            color: white;
+        }
+
+        .footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+
+        .signup-section {
+            height: 100%;
+            width: 100vw;
+            display: block;
+            background-image: linear-gradient(-65deg, rgb(255 255 255)56%, rgb(151 1 58)56%)
+        }
+
+        .bx-shadow {
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+        }
+
+        /*
+        .signup-section {
+            height: 100vh;
+            width: 100vw;
+            display: block;
+            background-image: linear-gradient(-65deg, rgb(236 236 232)56%, rgb(252 223 116)56%)
+        } */
+
+        .signup-card {
+            background-color: white;
+            margin-top: 3%;
+        }
+
+        .affliate-list li::before {
+            content: "o";
+            color: #f37673;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #122b88;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .input-group-text {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: .375rem .75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            border: 1px solid #fcdf74;
+            color: #fcdf74;
+            text-align: center;
+            white-space: nowrap;
+            background-color: white;
+            border: 1px solid #fcdf74;
+            border-radius: .25rem;
+        }
+
+        .cntk {
+            padding-top: 6%;
+            margin-left: -3%;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .swal-overlay {
+            background-color: teal;
+        }
+        .show {
+    
+    cursor: pointer;
+    position: relative;
+    bottom: 32px;
+    left: 215px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="signup-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 pt-2 d-flex justify-content-end">
+                    <h6 class="f1 d-block  text-dark mr-5 pt-3"><img src="{%static 'image/icon/mailicon.png'%}" class="nav-mail-icon" />&nbsp;&nbsp;<span class="mt-3">info@6imarkets.com</span></h6>
+                    <select name="" id="lang_select" class="form-control  mt-2" style="width:10%">
+                        <option value="en">Language</option>
+                        <option value="zh">English/{% trans "Chinese" %}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-6 col-md-6 offset-md-3 offset-lg-3 mb-3">
+                    <div class="signup-card card bx-shadow">
+                        <div class="section-sp ml-3 mr-3 mt-3 mb-3">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 flex-center">
+                                    <img src="{%static 'image/6i-Market.jpg'%}" class="d-md-block d-sm-block text-center" width="10%">
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-lg-12 col-md-12">
+                                    <h4 class="text-center f1" style="color:#ED0010">{% trans "Register" %}</h4>
+                                </div>
+                            </div>
+
+                            
+
+                              <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }} alert alert-success w-100 alert-dismissible fade show list-unstyled"{% endif %} role="alert">{{ message }}
+                                    <button type="button" class="close pt-2" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                </li>
+                                {% endfor %}
+                            </ul>
+
+                            <form class="mb-3 pl-3 pr-3 mt-5" style="color: #757575;" method="POST"
+                                enctype="multipart/form-data" onsubmit="myButton.disabled=true; return true">
+                                {% csrf_token %}
+                                <input type="hidden" name="campCode" value="{{cmp}}" class="form-control">
+                                <input type="hidden" name="refid" value="{{refid}}" class="form-control">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="text" class="form-control" id="fname" name="fname" placeholder="{% trans 'First Name' %}" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="text" id="lname" name="lname" class="form-control" placeholder="{% trans 'Last Name' %}" required>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="date" class="form-control" id="dob" name="dob" placeholder="{% trans 'Date of Birth' %}" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="text" id="mno" name="mob" class="form-control" placeholder="{% trans 'Mobile' %}" required>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="{% trans 'Email' %}" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <!-- <input type="text" class="form-control" name="country" placeholder="Country" required> -->
+                                        <select name="country" class="form-control" id="country" required >
+                                            <option value="">{% trans "Select Country" %}</option>
+											{% for cou_nm in country %}
+												<option value="{{cou_nm.countryId}}">{{cou_nm.countryName}}</option>  
+											{%endfor%}											
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <br>
+                                <hr style="border-top:1px solid rgb(237 56 51)">
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="md-form" id="uname-div">
+                                            <input type="text" id="uname" name="uname" class="form-control" placeholder="{% trans 'Username' %}" required>
+                                            <span style="color:white;" id="uname-error" hidden>{% trans "User name cannot be less than 5 characters" %}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="password" class="form-control" id="password" name="pwd1"  placeholder="{% trans 'Password' %}"> <span class="show" id="show"> show </span>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="password" class="form-control" id="passwords" name="pwd2" placeholder="{% trans 'Confirm Password' %}"><span class="show" id="show1"> show </span>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-lg-12 col-md-12 text-center">
+                                        <input class="btn btn-default pt-2 f1 btnk btn-block" id="live-submit"
+                                            name="myButton" type="submit" onclick="return getAge()" value="{% trans 'Submit' %}" />
+                                        
+                                        <span class="mt-3">if you have not account please  <a href="{% url 'login_client' %}"> sign in </a></span>
+                                        <!-- <button id="loading" hidden="true" disabled="true" class="btn btn-default  f1 btn-block text-white spin">
+                                            Loading  </button> -->
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="text-center text-dark pt-2">Copyright@2024 6iMarket, All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% block clientsignup %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+    document.getElementById('show').addEventListener('click', function() {
+     
+      var passwordInput = document.getElementById('password');
+      passwordInput.type ='text';
+      
+     
+    });
+
+
+    document.getElementById('show1').addEventListener('click', function() {
+     
+      var passwordInput1 = document.getElementById('passwords');
+      passwordInput1.type ='text';
+    });
+  </script>
+<script>
+    const uname = document.getElementById("uname");
+    uname.addEventListener('change', () => {
+        const live_submit = document.getElementById("live-submit");
+        const uname_error = document.getElementById("uname-error");
+        uname_val = uname.value;
+        if (uname_val.length < 5) {
+            live_submit.setAttribute("disabled", "");
+            uname_error.removeAttribute("hidden");
+        } else {
+            live_submit.removeAttribute('disabled');
+            uname_error.setAttribute("hidden", "");
+        }
+    })
+
+    function getAge() {
+        var dateString = document.getElementById("dob").value;
+        if (dateString != "") {
+            var today = new Date();
+            var birthDate = new Date(dateString); //format is mm.dd.yyyy
+            var age = today.getFullYear() - birthDate.getFullYear();
+
+            if (age < 18 || age > 100) {
+                alert("Your  age = " + age + " is below 18 year");
+                return false;
+            }
+            // else {
+            //     Swal.fire({
+            //         toast: true,
+            //         // title: 'Registration successfull...',
+            //         text: 'Registration successfull...Please wait you are redirected to login page...!',
+            //         imageUrl: "https://i.pinimg.com/originals/07/24/88/0724884440e8ddd0896ff557b75a222a.gif",
+            //         imageWidth: 200,
+            //         imageHeight: 180,
+            //         width: '450px',
+            //         showConfirmButton: false,
+            //         // timer: 50000,
+            //         // timerProgressBar: true,
+            //         closeOnEsc: false,
+            //     })
+            // }
+        } else {
+            alert("please provide your date of birth");
+        }
+    }
+</script>
+<script>
+    $("#lang_select").change(function () {
+        /* for china 11 */
+        var url = window.location.origin;
+        var link_total = window.location.href;
+        var name_path = window.location.pathname
+        var string_to_add = '/zh'
+        if (window.location.href.indexOf("zh") > -1) { document.location = link_total.replace('/zh', '') }
+        else {
+            if (window.location.href.indexOf("/en") > -1) {
+                document.location = url + name_path.replace("/en", "/zh")
+            }
+            else {
+                document.location = url + string_to_add + name_path
+            }
+        }
+    });
+</script>
+<script>
+    $('form').on('submit', function () {
+        Swal.fire({
+            toast: true,
+            text: 'Please wait for a moment...!',
+            imageUrl: "https://i.pinimg.com/originals/07/24/88/0724884440e8ddd0896ff557b75a222a.gif",
+            imageWidth: 200,
+            imageHeight: 180,
+            width: '550px',
+            showConfirmButton: false,
+            closeOnEsc: false,
+        })
+    });
+	function populateCountries() {
+    $.ajax({
+        url: '{% url "country_api_call" %}',
+        type: 'GET',
+        beforeSend: function () {
+            $('#cover-spin').show(0);
+        },
+        complete: function () {
+            $('#cover-spin').hide(0);
+        },
+        success: function (response) {
+            ;
+            var select = $('#country');
+            select.empty();
+
+            $.each(response.data.countries, function (index, item) {
+				
+                var country = item.country;
+                select.append('<option value="' + country.countryId + '">' + country.countryName + '</option>');
+            });
+			console.log("=====select======", select)
+        }
+    });
+}
+
+        $(document).ready(function () {
+            //populateCountries();
+        });
+</script>
+{% endblock %}
+
+</html>

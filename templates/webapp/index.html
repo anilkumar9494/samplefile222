@@ -1,0 +1,336 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+{% block home %}
+
+<!-- swiper js cdn -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+     .swiper {
+     width: 100%;
+     height: 100%;
+   }
+
+   .swiper-slide {
+     text-align: center;
+     font-size: 18px;
+     background: #fff;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   .swiper-slide img {
+     display: block;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+ </style>
+
+
+ <!-- PAGE CONTENT -->
+ <div id="page-content" class="no-padding">
+
+   <!-- <div class="swiper mySwiper" id="banner-img">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+         <div class="overlay p-15">
+            <div class="row">
+               <div class="col-lg-12 col-xs-12 col-md-12">
+                  <div class="row">
+                     <div class="col-lg-10 ">
+                        <h1 class="text-international">International</h1>
+                        <p class="p-international">We strive to cover the trading needs of all our clients, from all walks of life.
+                           international growth and acceptance being one of our foremost goals.
+                        </p>
+                        <div class="register-button mt-5">
+                           <a class="btn btn-yellow btn-xs position-left position-right" target="_blank" href="https://clients.6itrade.com/en/register"><span data-i18n="register">Register</span></a>
+                           <p class="trading-forex  mt-5">Trading forex and CFD s risking</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+           </div>
+        </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-pagination"></div>
+   </div> -->
+  
+
+    <section id="banner-img">
+      <div class="overlay p-15">
+       <div class="row">
+          <div class="col-lg-12 col-xs-12 col-md-12">
+             <div class="row">
+                <div class="col-lg-10 ">
+                   <h1 class="text-international">International</h1>
+                   <p class="p-international">We strive to cover the trading needs of all our clients, from all walks of life.
+                      international growth and acceptance being one of our foremost goals.
+                   </p>
+                   <div class="register-button mt-5">
+                      <a class="btn btn-yellow btn-xs position-left position-right" target="_blank" href="https://clients.6itrade.com/en/register"><span data-i18n="register">Register</span></a>
+                      <p class="trading-forex  mt-5">Trading forex and CFD s risking</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+      </div>
+    </section>
+
+    <section id="sub-header">
+       <div class="container mb-40 " id= "wholecont">
+          <div class="row">
+             <div class="col-sm-12">
+                <div class="row">
+                   <div class="col-lg-3 col-sm-6"  >
+                      <ul class="list-unstyled" id="listel">
+                      <li>
+                         <h2 class="text-center" >5</h2>
+                      </li>
+                      <li>
+                         <h6 class="text-center" data-i18n="cfdsassets">CFD Asset Classes</h6>
+                      </li>
+                      </ul>
+                   </div>
+                   <div class="col-lg-3 col-sm-6" >
+                      <ul class="list-unstyled" id="listel">
+                         <li>
+                            <h2 class="text-center">1:500</h2>
+                         </li>
+                         <li>
+                            <h6 class="text-center" data-i18n="leverageupto">Leverage, Up to</h6>
+                         </li>
+                      </ul>
+                   </div>
+                   <div class="col-lg-3 col-sm-6">
+                      <ul class="list-unstyled" id="listel">
+                         <li>
+                            <h2 id="dedicatedcss" class="text-center" data-i18n="dedicated1">Dedicated</h2>
+                         </li>
+                         <li>
+                            <h6 class="text-center" data-i18n="partnersportal">Partners Portal</h6>
+                         </li>
+                      </ul>
+                   </div>
+                   <div class="col-lg-3 col-sm-6">
+                      <ul class="list-unstyled" id="listel">
+                         <li>
+                            <h2 class="text-center">24/7</h2>
+                         </li>
+                         <li>
+                            <h6 class="text-center" data-i18n="cryptotrading">Crypto CFD Trading</h6>
+                         </li>
+                      </ul>
+                   </div>
+                </div>
+             </div>
+          </div>
+    </section>
+
+    <section id="circles">
+    <div class="container mt-40 mb-40">
+    <div class="headline text-center">
+    <h2 data-i18n="startinfour">START IN 4 SIMPLE STEPS</h2>
+    </div>
+    <div class="row">
+    <div class="col-md-3 col-xs-6 text-center">
+    <img src="/static/img/registerfinal2.png" alt="Register Trade" width="120px" class="margin-auto mb-10">
+    <h3 data-i18n="1register">1.Register</h3>
+    </div>
+    <div class="col-md-3 col-xs-6 text-center">
+    <img src="/static/img/approvedfinal2.png" alt="Approved Trade" width="120px" class="margin-auto mb-10">
+    <h3 data-i18n="2validate">2.Validate</h3>
+    </div>
+    <div class="col-md-3 col-xs-6 text-center">
+    <img src="/static/img/funding2.png" alt="Fund Trade" width="120px" class="margin-auto mb-10">
+    <h2 data-i18n="3funds">3.Fund</h2>
+    </div>
+    <div class="col-md-3 col-xs-6 text-center">
+    <img src="/static/img/approvedC2.png" alt="Trade" width="120px" class="margin-auto mb-10">
+    <h3 data-i18n="4trade">4.Trade</h3>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section id="section-tradenow2">
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-12 text-center">
+    <h2 data-i18n="getstartednow" class="text-white">GET STARTED NOW</h2>
+    <p><span data-i18n="losecapital" id="text-tone" data-i18n="starttradingon5">Start Trading on 5 CFD Asset Classes Now</span></p>
+    
+    <form class="col-md-8 col-md-offset-2">
+    <div class="col-lg-6 mt-10">
+    <input id="fnameregister" type="" name="" class="form-control" width="50%" data-i18n="[placeholder]fname">
+   </div>
+    <div class="col-lg-6 mt-10">
+    <input type="" name="" class="form-control" data-i18n="[placeholder]lname">
+   </div>
+    </form>
+
+    </div>
+    </div>
+    <div class="row mt-30 justify-content-center">
+    <div class="col-md-4 col-6">
+      <a id="registerbtn" class="btn btn-yellow btn-xl" href="https://clients.6itrade.com/en/register"><span data-i18n="registerC">REGISTER</span></a>
+    </div>
+    </div>
+    </div>
+    </section><!-- full-section -->
+
+
+    <section class="full-section bg-ddd">
+    <div class="full-section-container">
+    <div class="container">
+      <div class="row">
+         <div class="col-md-4 col-sm-6 text-center">
+         <div class="quote-box quote" id="#symbol_EURUSD" data-symbol="EURUSD">
+         <div class="row">
+         <h3 class="text-center"><div class="direction-wrapper"><div class="direction arrow-up"></div></div>EURUSD</h3>
+         <div class="col-xs-6"><span class="full-width display-inline text-right"><span class="bid_1"></span><h2 class="display-inline position-right"><span class="bid_2"></span><small><span class="bid_3"></span></small></h2></span></div>
+         <div class="col-xs-6"><span class="full-width display-inline text-left"><h2 class="display-inline position-left"><span class="ask_2"></span><small><span class="ask_3"></span></small></h2><span class="ask_1"></span></span></div>
+         <div class="col-xs-4 text-right"><span class="label label-success">BID</span></div>
+         <div class="col-xs-4"><p class="text-blue text-center spread"></p></div>
+         <div class="col-xs-4 text-left"><span class="label label-danger">ASK</span></div>
+         </div>
+         </div>
+         </div>
+         <div class="col-md-4 col-sm-6 text-center">
+         <div class="quote-box quote" id="#symbol_USDJPY" data-symbol="USDJPY">
+         <div class="row">
+         <h3 class="text-center"><div class="direction-wrapper"><div class="direction arrow-up"></div></div>USDJPY</h3>
+         <div class="col-xs-6"><span class="full-width display-inline text-right"><span class="bid_1"></span><h2 class="display-inline position-right"><span class="bid_2"></span><small><span class="bid_3"></span></small></h2></span></div>
+         <div class="col-xs-6"><span class="full-width display-inline text-left"><h2 class="display-inline position-left"><span class="ask_2"></span><small><span class="ask_3"></span></small></h2><span class="ask_1"></span></span></div>
+         <div class="col-xs-4 text-right"><span class="label label-success">BID</span></div>
+         <div class="col-xs-4"><p class="text-blue text-center spread"></p></div>
+         <div class="col-xs-4 text-left"><span class="label label-danger">ASK</span></div>
+         </div>
+         </div>
+         </div>
+         <div class="col-md-4 col-sm-6 text-center">
+         <div class="quote-box quote" id="#symbol_GBPUSD" data-symbol="GBPUSD">
+         <div class="row">
+         <h3 class="text-center"><div class="direction-wrapper"><div class="direction arrow-up"></div></div>GBPUSD</h3>
+         <div class="col-xs-6"><span class="full-width display-inline text-right"><span class="bid_1"></span><h2 class="display-inline position-right"><span class="bid_2"></span><small><span class="bid_3"></span></small></h2></span></div>
+         <div class="col-xs-6"><span class="full-width display-inline text-left"><h2 class="display-inline position-left"><span class="ask_2"></span><small><span class="ask_3"></span></small></h2><span class="ask_1"></span></span></div>
+         <div class="col-xs-4 text-right"><span class="label label-success">BID</span></div>
+         <div class="col-xs-4"><p class="text-blue text-center spread"></p></div>
+         <div class="col-xs-4 text-left"><span class="label label-danger">ASK</span></div>
+         </div>
+         </div>
+         </div>
+         <div class="col-md-4 col-sm-6 text-center">
+         <div class="quote-box quote" id="#symbol_USDCHF" data-symbol="USDCHF">
+         <div class="row">
+         <h3 class="text-center"><div class="direction-wrapper"><div class="direction arrow-up"></div></div>USDCHF</h3>
+         <div class="col-xs-6"><span class="full-width display-inline text-right"><span class="bid_1"></span><h2 class="display-inline position-right"><span class="bid_2"></span><small><span class="bid_3"></span></small></h2></span></div>
+         <div class="col-xs-6"><span class="full-width display-inline text-left"><h2 class="display-inline position-left"><span class="ask_2"></span><small><span class="ask_3"></span></small></h2><span class="ask_1"></span></span></div>
+         <div class="col-xs-4 text-right"><span class="label label-success">BID</span></div>
+         <div class="col-xs-4"><p class="text-blue text-center spread"></p></div>
+         <div class="col-xs-4 text-left"><span class="label label-danger">ASK</span></div>
+         </div>
+         </div>
+         </div>
+         <div class="col-md-4 col-sm-6 text-center">
+         <div class="quote-box quote" id="#symbol_XAUUSD" data-symbol="XAUUSD">
+         <div class="row">
+         <h3 class="text-center"><div class="direction-wrapper"><div class="direction arrow-up"></div></div>XAUUSD</h3>
+         <div class="col-xs-6"><span class="full-width display-inline text-right"><span class="bid_1"></span><h2 class="display-inline position-right"><span class="bid_2"></span><small><span class="bid_3"></span></small></h2></span></div>
+         <div class="col-xs-6"><span class="full-width display-inline text-left"><h2 class="display-inline position-left"><span class="ask_2"></span><small><span class="ask_3"></span></small></h2><span class="ask_1"></span></span></div>
+         <div class="col-xs-4 text-right"><span class="label label-success">BID</span></div>
+         <div class="col-xs-4"><p class="text-blue text-center spread"></p></div>
+         <div class="col-xs-4 text-left"><span class="label label-danger">ASK</span></div>
+         </div>
+         </div>
+         </div>
+         <div class="col-md-4 col-sm-6 text-center">
+         <div class="quote-box quote" id="#symbol_BTCUSD" data-symbol="BTCUSD">
+         <div class="row">
+         <h3 class="text-center"><div class="direction-wrapper"><div class="direction arrow-up"></div></div>BTCUSD</h3>
+         <div class="col-xs-6"><span class="full-width display-inline text-right"><span class="bid_1"></span><h2 class="display-inline position-right"><span class="bid_2"></span><small><span class="bid_3"></span></small></h2></span></div>
+         <div class="col-xs-6"><span class="full-width display-inline text-left"><h2 class="display-inline position-left"><span class="ask_2"></span><small><span class="ask_3"></span></small></h2><span class="ask_1"></span></span></div>
+         <div class="col-xs-4 text-right"><span class="label label-success">BID</span></div>
+         <div class="col-xs-4"><p class="text-blue text-center spread"></p></div>
+         <div class="col-xs-4 text-left"><span class="label label-danger">ASK</span></div>
+         </div>
+         </div>
+         </div>
+       </div>
+    </div>
+    </div>
+    </section>
+    <section id="section-mt4">
+   <div class="overlay p-5">
+    <div class="container">
+    <div class="row">
+      <div class="col-12 headline text-center mb-10 mt-10">
+         <h2 data-i18n="getmt41" class>DOWNLOAD Ctrader</h2>
+         </div>
+      </div>
+    <div class="row justify-content-center">
+    <div class="col-md-2 col-6">
+    <a href="https://getctrader.com/sixigroup/ctrader-sixigroup-setup.exe" class="downloads-link" target="_BLANK"><i class="fa fa-windows"></i> <h4>Windows </h4></a>
+    </div>
+    <div class="col-md-2 col-6">
+    <a href="https://play.google.com/store/apps/details?id=com.spotware.ct " class="downloads-link" target="_BLANK"><i class="fa fa-android"></i> <h4>Android </h4></a>
+    </div>
+    <div class="col-md-2 col-6">
+    <a href="https://apps.apple.com/cy/app/spotware-ctrader/id76742881" class="downloads-link" target="_BLANK"><i class="fa fa-apple"></i> <h4>iOS </h4></a>
+    </div>
+    <div class="col-md-2 col-6">
+    <a href="https://app.6imarkets.com" class="downloads-link " target="_BLANK">
+      <!-- <img id="osx-link" class="osx_ipad" src="/static/assets/images/imac.png?v=bfd76e3c6bb5e91437dad93ed61094d6" alt="osxipad trade"> -->
+      <i class="fa fa-globe"></i> <h4>Web</h4></a>
+    </div>
+    </div>
+    </div>
+   </div>
+    </section><!-- full-section -->
+    <!--have a look mk -->
+    <section class="full-section" >
+    <div class="full-section-container">
+    <div class="container">
+    <div class="row">
+    <div class="headline text-center">
+    <h4 data-i18n="fastfunding2">FAST AND SECURE PAYMENT OPTIONS</h4>
+    </div>
+    <div class="col-12 text-center" >
+    <img id="master-card" src="/static/img/psp.png" class="imgmargin" alt="Payment Options">
+    </div><!-- col -->
+    </div><!-- row -->
+    </div><!-- container -->
+    </div><!-- full-section-container -->
+    </section><!-- full-section -->
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+    },
+  });
+</script>
+{% endblock %}
+

@@ -1,0 +1,98 @@
+{% extends 'webapp/base.html' %} {% load static %} {% block home %}
+<style>
+    #deposit_tbl{
+        width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background-color: #fff;
+    }
+    #deposit_tbl th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    #deposit_tbl td img{
+        max-width: 100px;
+    display: block;
+    padding-bottom: 15px;
+    }
+    #deposit_tbl th {
+      background-color: #f2f2f2;
+    }
+</style>
+
+
+<section id="blog">
+  <div class="overlay_why p-8">
+    <div class="row">
+      <div class="container">
+        <div class="col-lg-12 mb-20">
+          <h1 class="pb-2">Deposit Options</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-white">
+                    Please enjoy our growing list of deposit options. We endeavor to collaborate with leading and secure payment providers to offer our clients ease and convenience wherever they are around the world.
+                </p>
+            </br>
+        </br>
+
+                <p class="text-white">Would you like to Deposit? Click & log in to your dedicated Client Area.</p>
+
+
+                <table id="deposit_tbl" style="width: 100%;">
+                    <tr>
+                        <th>Payment Method</th>
+                        <th>Currency</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bank Wire Transfer</td>
+                        <td>USD & EUR</td>
+                        <td><button class="btn btn-danger">Login</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/static/img/paymode/mastercard.png"></td>
+                        <td>USD</td>
+                        <td><button class="btn btn-danger">Login</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/static/img/paymode/visalogo.jpeg"></td>
+                        <td>USD</td>
+                        <td><button class="btn btn-danger">Login</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/static/img/paymode/neteller.png"></td>
+                        <td>USD & EUR</td>
+                        <td><button class="btn btn-danger">Login</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/static/img/paymode/skrill.png"></td>
+                        <td>USD & EUR</td>
+                        <td><button class="btn btn-danger">Login</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/static/img/paymode/unionpay.jpeg"></td>
+                        <td>CNY</td>
+                        <td><button class="btn btn-danger">Login</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/static/img/paymode/divepaylogo2-1.png"></td>
+                        <td>USD & EUR</td>
+                        <td><button class="btn btn-danger">Login</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/static/img/paymode/cryptos.png"></td>
+                        <td>USDT,BTC,ETH</td>
+                        <td><button class="btn btn-danger">Login</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%endblock %}
